@@ -20,13 +20,22 @@ requires:
   MooseX::Role::Parameterized: 0
   String::Errf: 0
   Sub::Exporter: 0
+  Throwable: 0
   Try::Tiny: 0
   namespace::clean: 0
 resources:
   repository: git://git.codesimply.com/Throwable-X.git
-version: 0.001
+version: 0.002
 x_Dist_Zilla:
   plugins:
+    -
+      class: Dist::Zilla::Plugin::Prereqs
+      config:
+        Dist::Zilla::Plugin::Prereqs:
+          phase: runtime
+          type: requires
+      name: Prereqs
+      version: 4.102342
     -
       class: Dist::Zilla::Plugin::GatherDir
       name: '@RJBS/@Basic/GatherDir'

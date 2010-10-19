@@ -1,6 +1,6 @@
 package Throwable::X::Meta::Attribute::Payload;
 BEGIN {
-  $Throwable::X::Meta::Attribute::Payload::VERSION = '0.001';
+  $Throwable::X::Meta::Attribute::Payload::VERSION = '0.002';
 }
 use Moose::Role;
 # ABSTRACT: a meta-trait for attributes forming the autopayload
@@ -17,7 +17,7 @@ Throwable::X::Meta::Attribute::Payload - a meta-trait for attributes forming the
 
 =head1 VERSION
 
-version 0.001
+version 0.002
 
 =head1 DESCRIPTION
 

@@ -1,6 +1,6 @@
 package Throwable::X::WithIdent;
 BEGIN {
-  $Throwable::X::WithIdent::VERSION = '0.001';
+  $Throwable::X::WithIdent::VERSION = '0.002';
 }
 use Moose::Role;
 # ABSTRACT: a thing with an ident attribute
@@ -27,7 +27,7 @@ Throwable::X::WithIdent - a thing with an ident attribute
 
 =head1 VERSION
 
-version 0.001
+version 0.002
 
 =head1 DESCRIPTION
 

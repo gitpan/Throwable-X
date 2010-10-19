@@ -1,6 +1,6 @@
 package Throwable::X;
 BEGIN {
-  $Throwable::X::VERSION = '0.001';
+  $Throwable::X::VERSION = '0.002';
 }
 use Moose::Role;
 # ABSTRACT: useful eXtra behavior for Throwable exceptions
@@ -51,7 +51,7 @@ Throwable::X - useful eXtra behavior for Throwable exceptions
 
 =head1 VERSION
 
-version 0.001
+version 0.002
 
 =head1 SYNOPSIS
 
@@ -217,7 +217,7 @@ send across the wire to remote clients.
 The C<throw> (or C<new>) method on a Throwable::X exception class can be passed
 a single string, in which case it will be used as the exception's C<ident>.
 This is (of course) only useful if no other attribute of the exception is
-required.
+required.  This feature is provided by L<MooseX::OneArgNew>.
 
 =head1 AUTHOR
 

@@ -1,6 +1,6 @@
 package Throwable::X::WithTags;
 BEGIN {
-  $Throwable::X::WithTags::VERSION = '0.001';
+  $Throwable::X::WithTags::VERSION = '0.002';
 }
 use Moose::Role;
 
@@ -67,7 +67,7 @@ Throwable::X::WithTags
 
 =head1 VERSION
 
-version 0.001
+version 0.002
 
 =head1 AUTHOR
 

@@ -28,10 +28,11 @@ my %WriteMakefileArgs = (
     'MooseX::Role::Parameterized' => '0',
     'String::Errf' => '0',
     'Sub::Exporter' => '0',
+    'Throwable' => '0',
     'Try::Tiny' => '0',
     'namespace::clean' => '0'
   },
-  'VERSION' => '0.001',
+  'VERSION' => '0.002',
   'test' => {
     'TESTS' => 't/*.t'
   }
