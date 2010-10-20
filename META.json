@@ -46,7 +46,7 @@
          "url" : "git://git.codesimply.com/Throwable-X.git"
       }
    },
-   "version" : "0.003",
+   "version" : "0.004",
    "x_Dist_Zilla" : {
       "plugins" : [
          {

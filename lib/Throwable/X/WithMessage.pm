@@ -1,6 +1,6 @@
 package Throwable::X::WithMessage;
 BEGIN {
-  $Throwable::X::WithMessage::VERSION = '0.003';
+  $Throwable::X::WithMessage::VERSION = '0.004';
 }
 use Moose::Role;
 # ABSTRACT: a thing with a message method
@@ -21,7 +21,7 @@ Throwable::X::WithMessage - a thing with a message method
 
 =head1 VERSION
 
-version 0.003
+version 0.004
 
 =head1 DESCRIPTION
 

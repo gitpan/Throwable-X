@@ -1,6 +1,6 @@
 package Throwable::X;
 BEGIN {
-  $Throwable::X::VERSION = '0.003';
+  $Throwable::X::VERSION = '0.004';
 }
 use Moose::Role;
 # ABSTRACT: useful eXtra behavior for Throwable exceptions
@@ -51,7 +51,7 @@ Throwable::X - useful eXtra behavior for Throwable exceptions
 
 =head1 VERSION
 
-version 0.003
+version 0.004
 
 =head1 SYNOPSIS
 
