@@ -23,6 +23,7 @@
          "requires" : {
             "Moose::Role" : 0,
             "Moose::Util::TypeConstraints" : 0,
+            "MooseX::OneArgNew" : 0,
             "MooseX::Role::Parameterized" : 0,
             "String::Errf" : 0,
             "Sub::Exporter" : 0,
@@ -45,7 +46,7 @@
          "url" : "git://git.codesimply.com/Throwable-X.git"
       }
    },
-   "version" : "0.002",
+   "version" : "0.003",
    "x_Dist_Zilla" : {
       "plugins" : [
          {

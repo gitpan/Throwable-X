@@ -25,6 +25,7 @@ my %WriteMakefileArgs = (
   'PREREQ_PM' => {
     'Moose::Role' => '0',
     'Moose::Util::TypeConstraints' => '0',
+    'MooseX::OneArgNew' => '0',
     'MooseX::Role::Parameterized' => '0',
     'String::Errf' => '0',
     'Sub::Exporter' => '0',
@@ -32,7 +33,7 @@ my %WriteMakefileArgs = (
     'Try::Tiny' => '0',
     'namespace::clean' => '0'
   },
-  'VERSION' => '0.002',
+  'VERSION' => '0.003',
   'test' => {
     'TESTS' => 't/*.t'
   }

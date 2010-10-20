@@ -1,6 +1,6 @@
 package Throwable::X::WithMessage::Errf;
 BEGIN {
-  $Throwable::X::WithMessage::Errf::VERSION = '0.002';
+  $Throwable::X::WithMessage::Errf::VERSION = '0.003';
 }
 use MooseX::Role::Parameterized;
 # ABSTRACT: an exception with a String::Errf-powered message
@@ -69,7 +69,7 @@ Throwable::X::WithMessage::Errf - an exception with a String::Errf-powered messa
 
 =head1 VERSION
 
-version 0.002
+version 0.003
 
 =head1 SYNOPSIS
 

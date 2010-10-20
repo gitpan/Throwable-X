@@ -1,8 +1,9 @@
 package Throwable::X::WithTags;
 BEGIN {
-  $Throwable::X::WithTags::VERSION = '0.002';
+  $Throwable::X::WithTags::VERSION = '0.003';
 }
 use Moose::Role;
+# ABSTRACT: a thing with a list of tags
 
 use namespace::clean -except => 'meta';
 
@@ -63,11 +64,11 @@ __END__
 
 =head1 NAME
 
-Throwable::X::WithTags
+Throwable::X::WithTags - a thing with a list of tags
 
 =head1 VERSION
 
-version 0.002
+version 0.003
 
 =head1 AUTHOR
 

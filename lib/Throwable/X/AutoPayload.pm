@@ -1,6 +1,6 @@
 package Throwable::X::AutoPayload;
 BEGIN {
-  $Throwable::X::AutoPayload::VERSION = '0.002';
+  $Throwable::X::AutoPayload::VERSION = '0.003';
 }
 use Moose::Role;
 # ABSTRACT: a thing that automatically computes its payload based on attributes
@@ -36,7 +36,7 @@ Throwable::X::AutoPayload - a thing that automatically computes its payload base
 
 =head1 VERSION
 
-version 0.002
+version 0.003
 
 =head1 SYNOPSIS
 
