@@ -1,6 +1,6 @@
 package Throwable::X;
 BEGIN {
-  $Throwable::X::VERSION = '0.004';
+  $Throwable::X::VERSION = '0.005';
 }
 use Moose::Role;
 # ABSTRACT: useful eXtra behavior for Throwable exceptions
@@ -14,15 +14,15 @@ use namespace::clean -except => 'meta';
 use Sub::Exporter -setup => {
   exports => { Payload => \'__payload' },
 };
-sub __payload { sub { 'Throwable::X::Meta::Attribute::Payload' } }
+sub __payload { sub { 'Role::HasPayload::Meta::Attribute::Payload' } }
 
 with(
   'Throwable',
-  'Throwable::X::AutoPayload',
-  'Throwable::X::WithIdent',
-  'Throwable::X::WithTags',
+  'Role::HasPayload::Merged',
+  'Role::Identifiable::HasIdent',
+  'Role::Identifiable::HasTags',
 
-  'Throwable::X::WithMessage::Errf' => {
+  'Role::HasMessage::Errf' => {
     default  => sub { $_[0]->ident },
     lazy     => 1,
   },
@@ -32,6 +32,12 @@ with(
     init_arg => 'ident',
   },
 );
+
+# Can't do this because we can't +attr in roles.  Can't use methods with type,
+# because methods are too late to parameterize roles.  Would rather not add
+# MXRP as a prereq to all the subroles. -- rjbs, 2010-10-28
+# has '+ident'       => (isa => 'Throwable::X::_Ident');
+# has '+message_fmt' => (isa => 'Throwable::X::_VisibleStr');
 
 has is_public => (
   is  => 'ro',
@@ -51,7 +57,7 @@ Throwable::X - useful eXtra behavior for Throwable exceptions
 
 =head1 VERSION
 
-version 0.004
+version 0.005
 
 =head1 SYNOPSIS
 
@@ -138,19 +144,19 @@ L<Throwable>
 
 =item *
 
-L<Throwable::X::AutoPayload>
+L<Role::HasPayload::Merged>
 
 =item *
 
-L<Throwable::X::WithIdent>
+L<Role::HasMessage::Errf>
 
 =item *
 
-L<Throwable::X::WithMessage::Errf>
+L<Role::Identifiable::HasIdent>
 
 =item *
 
-L<Throwable::X::WithTags>
+L<Role::Identifiable::HasTags>
 
 =back
 
@@ -167,7 +173,7 @@ try to describe everything about the error, but serves as a unique identifier
 for the kind of exception being thrown.  Exception handlers looking for
 specific exceptions can then check the ident for known values.  It can also be
 used for refinement or localization of the message format, described below.
-This feature is provided by L<Throwable::X::WithIdent>.
+This feature is provided by L<Role::Identifiable::HasIdent>.
 
 For less specific identification of classes of exceptions, the exception can be
 checked for what roles it performs with C<does>, or its tags can be checked
@@ -175,7 +181,7 @@ with C<has_tag>.  All the tags reported by the C<x_tags> methods of every class
 and role in the exception's composition are present, as well as per-instance
 tags provided when the exception was thrown.  Tags as simple strings consisting
 of letters, numbers, and dashes.  This feature is provided by
-L<Throwable::X::WithTags>.
+L<Role::Identifiable::HasTags>.
 
 Throwable::X exceptions also have a message, which (unlike the C<ident>) is
 meant to be a human-readable string describing precisely what happened.  The
@@ -185,17 +191,19 @@ the C<payload> (described below) to produce a filled-in string when the
 C<message> method is called.  (The L<synopsis|/SYNOPSIS> above gives a very
 simple example of how this works, but the String::Errf documentation is more
 useful, generally.)  This feature is provided by
-L<Throwable::X::WithMessage::Errf>.
+L<Role::HasMessage::Errf>.
 
 =head2 Features for Serialization
 
 The C<payload> method returns a hashref containing the name and value of every
-attribute with the trait L<Throwable::X::Meta::Attribute::Payload>.  There's
-nothing more to it than that.  It's used by the message formatting facility
-descibed above, and is also useful for serializing exceptions.  Assuming no
-complex values are present in the payload, the structure below should be easy
-to serialize and use in another program, for example in a web browser receiving
-a serialized Throwable::X via JSON in response to an XMLHTTPRequest.
+attribute with the trait L<Role::HasPayload::Meta::Attribute::Payload>, merged
+with the hashref (if any) provided as the C<payload> entry to the constructor.
+There's nothing more to it than that.  It's used by the message formatting
+facility descibed above, and is also useful for serializing exceptions.
+Assuming no complex values are present in the payload, the structure below
+should be easy to serialize and use in another program, for example in a web
+browser receiving a serialized Throwable::X via JSON in response to an
+XMLHTTPRequest.
 
   {
     ident   => $err->ident,
@@ -206,7 +214,7 @@ a serialized Throwable::X via JSON in response to an XMLHTTPRequest.
 
 There is no specific code present to support doing this, yet.
 
-The C<payload> method is implemented by L<Throwable::X::AutoPayload>.
+The C<payload> method is implemented by L<Role::HasPayload::Merged>.
 
 The C<public> attribute, checked with the C<is_public> method, is meant to
 indicate whether the exception's message is safe to display to end users or

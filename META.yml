@@ -4,7 +4,7 @@ author:
   - 'Ricardo Signes <rjbs@cpan.org>'
 build_requires:
   Moose: 0
-  Test::More: 0
+  Test::More: 0.96
 configure_requires:
   ExtUtils::MakeMaker: 6.31
 dynamic_config: 0
@@ -18,15 +18,12 @@ requires:
   Moose::Role: 0
   Moose::Util::TypeConstraints: 0
   MooseX::OneArgNew: 0
-  MooseX::Role::Parameterized: 0
-  String::Errf: 0
   Sub::Exporter: 0
   Throwable: 0
-  Try::Tiny: 0
   namespace::clean: 0
 resources:
   repository: git://git.codesimply.com/Throwable-X.git
-version: 0.004
+version: 0.005
 x_Dist_Zilla:
   plugins:
     -
@@ -125,6 +122,14 @@ x_Dist_Zilla:
       class: Dist::Zilla::Plugin::Repository
       name: '@RJBS/Repository'
       version: 0.14
+    -
+      class: Dist::Zilla::Plugin::Prereqs
+      config:
+        Dist::Zilla::Plugin::Prereqs:
+          phase: test
+          type: requires
+      name: '@RJBS/TestMoreWithSubtests'
+      version: 4.102342
     -
       class: Dist::Zilla::Plugin::PodWeaver
       name: '@RJBS/PodWeaver'

@@ -13,7 +13,7 @@ my %WriteMakefileArgs = (
   'AUTHOR' => 'Ricardo Signes <rjbs@cpan.org>',
   'BUILD_REQUIRES' => {
     'Moose' => '0',
-    'Test::More' => '0'
+    'Test::More' => '0.96'
   },
   'CONFIGURE_REQUIRES' => {
     'ExtUtils::MakeMaker' => '6.31'
@@ -26,14 +26,11 @@ my %WriteMakefileArgs = (
     'Moose::Role' => '0',
     'Moose::Util::TypeConstraints' => '0',
     'MooseX::OneArgNew' => '0',
-    'MooseX::Role::Parameterized' => '0',
-    'String::Errf' => '0',
     'Sub::Exporter' => '0',
     'Throwable' => '0',
-    'Try::Tiny' => '0',
     'namespace::clean' => '0'
   },
-  'VERSION' => '0.004',
+  'VERSION' => '0.005',
   'test' => {
     'TESTS' => 't/*.t'
   }

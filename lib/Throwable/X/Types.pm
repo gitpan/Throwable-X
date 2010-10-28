@@ -2,7 +2,7 @@ use strict;
 use warnings;
 package Throwable::X::Types;
 BEGIN {
-  $Throwable::X::Types::VERSION = '0.004';
+  $Throwable::X::Types::VERSION = '0.005';
 }
 # ABSTRACT: private types used by Throwable::X
 
@@ -26,11 +26,6 @@ subtype 'Throwable::X::_Ident',
 # long as an explicit message_fmt was given.  I think this is probably better.
 # -- rjbs, 2010-10-17
 
-subtype 'Throwable::X::_Tag',
-  as 'Str',
-  where { /\A[-a-z0-9]+\z/ };
-
-
 1;
 
 __END__
@@ -42,7 +37,7 @@ Throwable::X::Types - private types used by Throwable::X
 
 =head1 VERSION
 
-version 0.004
+version 0.005
 
 =head1 DESCRIPTION
 

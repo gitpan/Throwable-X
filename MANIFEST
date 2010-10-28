@@ -7,12 +7,6 @@ Makefile.PL
 README
 dist.ini
 lib/Throwable/X.pm
-lib/Throwable/X/AutoPayload.pm
-lib/Throwable/X/Meta/Attribute/Payload.pm
 lib/Throwable/X/Types.pm
-lib/Throwable/X/WithIdent.pm
-lib/Throwable/X/WithMessage.pm
-lib/Throwable/X/WithMessage/Errf.pm
-lib/Throwable/X/WithTags.pm
 t/exception.t
 t/release-pod-syntax.t
