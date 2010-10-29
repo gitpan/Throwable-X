@@ -2,7 +2,7 @@ use strict;
 use warnings;
 package Throwable::X::Types;
 BEGIN {
-  $Throwable::X::Types::VERSION = '0.005';
+  $Throwable::X::Types::VERSION = '0.006';
 }
 # ABSTRACT: private types used by Throwable::X
 
@@ -37,7 +37,7 @@ Throwable::X::Types - private types used by Throwable::X
 
 =head1 VERSION
 
-version 0.005
+version 0.006
 
 =head1 DESCRIPTION
 

@@ -18,12 +18,16 @@ requires:
   Moose::Role: 0
   Moose::Util::TypeConstraints: 0
   MooseX::OneArgNew: 0
+  Role::HasMessage::Errf: 0.005
+  Role::HasPayload::Merged: 0.005
+  Role::Identifiable::HasIdent: 0.005
+  Role::Identifiable::HasTags: 0.005
   Sub::Exporter: 0
   Throwable: 0
   namespace::clean: 0
 resources:
   repository: git://git.codesimply.com/Throwable-X.git
-version: 0.005
+version: 0.006
 x_Dist_Zilla:
   plugins:
     -

@@ -26,11 +26,15 @@ my %WriteMakefileArgs = (
     'Moose::Role' => '0',
     'Moose::Util::TypeConstraints' => '0',
     'MooseX::OneArgNew' => '0',
+    'Role::HasMessage::Errf' => '0.005',
+    'Role::HasPayload::Merged' => '0.005',
+    'Role::Identifiable::HasIdent' => '0.005',
+    'Role::Identifiable::HasTags' => '0.005',
     'Sub::Exporter' => '0',
     'Throwable' => '0',
     'namespace::clean' => '0'
   },
-  'VERSION' => '0.005',
+  'VERSION' => '0.006',
   'test' => {
     'TESTS' => 't/*.t'
   }
