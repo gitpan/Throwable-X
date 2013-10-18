@@ -1,8 +1,8 @@
 use strict;
 use warnings;
 package Throwable::X::Types;
-BEGIN {
-  $Throwable::X::Types::VERSION = '0.006';
+{
+  $Throwable::X::Types::VERSION = '0.007';
 }
 # ABSTRACT: private types used by Throwable::X
 
@@ -29,6 +29,7 @@ subtype 'Throwable::X::_Ident',
 1;
 
 __END__
+
 =pod
 
 =head1 NAME
@@ -37,7 +38,7 @@ Throwable::X::Types - private types used by Throwable::X
 
 =head1 VERSION
 
-version 0.006
+version 0.007
 
 =head1 DESCRIPTION
 
@@ -50,10 +51,9 @@ Ricardo Signes <rjbs@cpan.org>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2010 by Ricardo Signes.
+This software is copyright (c) 2013 by Ricardo Signes.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.
 
 =cut
-
